@@ -42,8 +42,18 @@ namespace SetWindowSize
             if (wbl != null)
             {
                 var handle = wbl.Process.MainWindowHandle;
+                Console.WriteLine();
+                Console.Write("Select ENTER for 1080p or 4 for 4K: ");
+                selection = Console.ReadKey();
 
-                SetWindowPos(handle, 0, 0, 0, 1920, 1080, SWP_NOMOVE | SWP_NOZORDER | SWP_SHOWWINDOW);
+                if (selection.Key == ConsoleKey.T || selection.Key == ConsoleKey.Enter)
+                {
+                    SetWindowPos(handle, 0, 0, 0, 1920, 1080, SWP_NOMOVE | SWP_NOZORDER | SWP_SHOWWINDOW);
+                }
+                else if (selection.Key == ConsoleKey.D4 || selection.Key == ConsoleKey.NumPad4)
+                {
+                    SetWindowPos(handle, 0, 0, 0, 3840, 2160, SWP_NOMOVE | SWP_NOZORDER | SWP_SHOWWINDOW);
+                }
             }
         }
 

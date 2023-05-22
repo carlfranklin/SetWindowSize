@@ -48,11 +48,15 @@ namespace SetWindowSize
 
                 if (selection.Key == ConsoleKey.T || selection.Key == ConsoleKey.Enter)
                 {
-                    SetWindowPos(handle, 0, 0, 0, 1920, 1080, SWP_NOMOVE | SWP_NOZORDER | SWP_SHOWWINDOW);
+                    int x = (5120 - 1920) / 2;
+                    int y = (1440 - 1080) / 2;
+                    SetWindowPos(handle, 0, x, y, 1920, 1080, SWP_NOZORDER | SWP_SHOWWINDOW);
                 }
                 else if (selection.Key == ConsoleKey.D4 || selection.Key == ConsoleKey.NumPad4)
                 {
-                    SetWindowPos(handle, 0, 0, 0, 3840, 2160, SWP_NOMOVE | SWP_NOZORDER | SWP_SHOWWINDOW);
+                    int x = (5120 - 3840) / 2;
+                    int y = (1440 - 2160) / 2;
+                    SetWindowPos(handle, 0, 0, 0, 3840, 2160, SWP_NOZORDER | SWP_SHOWWINDOW);
                 }
             }
         }
